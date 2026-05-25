@@ -1,0 +1,261 @@
+%-------------------------
+% Resume in Latex
+% Author : Harshibar
+% Based off of: https://github.com/jakeryang/resume
+% License : MIT
+%------------------------
+
+\documentclass[letterpaper,11pt]{article}
+
+\usepackage{latexsym}
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage{marvosym}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{verbatim}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage{fancyhdr}
+\usepackage[english]{babel}
+\usepackage{tabularx}
+% only for pdflatex
+% \input{glyphtounicode}
+
+% fontawesome
+\usepackage{fontawesome5}
+\usepackage[dvipsnames]{xcolor}
+% fixed width
+\usepackage[scale=0.90,lf]{FiraMono}
+
+% light-grey
+\definecolor{light-grey}{gray}{0.83}
+\definecolor{dark-grey}{gray}{0.3}
+\definecolor{text-grey}{gray}{.08}
+
+\DeclareRobustCommand{\ebseries}{\fontseries{eb}\selectfont}
+\DeclareTextFontCommand{\texteb}{\ebseries}
+
+% custom underilne
+\usepackage{contour}
+\usepackage[normalem]{ulem}
+\renewcommand{\ULdepth}{1.8pt}
+\contourlength{0.8pt}
+\newcommand{\myuline}[1]{%
+  \uline{\phantom{#1}}%
+  \llap{\contour{white}{#1}}%
+}
+
+
+% custom font: helvetica-style
+\usepackage{tgheros}
+\renewcommand*\familydefault{\sfdefault} 
+%% Only if the base font of the document is to be sans serif
+\usepackage[T1]{fontenc}
+
+
+\pagestyle{fancy}
+\fancyhf{} % clear all header and footer fields
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+% Adjust margins
+\addtolength{\oddsidemargin}{-0.5in}
+\addtolength{\evensidemargin}{0in}
+\addtolength{\textwidth}{1in}
+\addtolength{\topmargin}{-.6in}
+\addtolength{\textheight}{1.0in}
+
+\urlstyle{same}
+
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+% Sections formatting - serif
+% \titleformat{\section}{
+%   \vspace{2pt} \scshape \raggedright\large % header section
+% }{}{0em}{}[\color{black} \titlerule \vspace{-5pt}]
+
+% TODO EBSERIES
+% sans serif sections
+\titleformat {\section}{
+    \bfseries \vspace{2pt} \raggedright \large % header section
+}{}{0em}{}[\color{MidnightBlue} {\titlerule[2pt]} \vspace{-4pt}]
+
+% only for pdflatex
+% Ensure that generate pdf is machine readable/ATS parsable
+% \pdfgentounicode=1
+
+%-------------------------
+% Custom commands
+\newcommand{\resumeItem}[1]{
+  \item\small{
+    {#1 \vspace{-1pt}}
+  }
+}
+
+\newcommand{\resumeSubheading}[4]{
+  \vspace{-1pt}\item
+    \begin{tabular*}{\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & {\color{dark-grey}\small #2}\vspace{1pt}\\ % top row of resume entry
+      \textit{#3} & {\color{dark-grey} \small #4}\\ % second row of resume entry
+    \end{tabular*}\vspace{-4pt}
+}
+
+\newcommand{\resumeSubSubheading}[2]{
+    \item
+    \begin{tabular*}{\textwidth}{l@{\extracolsep{\fill}}r}
+      \textit{\small#1} & \textit{\small #2} \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeProjectHeading}[2]{
+    \item
+    \begin{tabular*}{\textwidth}{l@{\extracolsep{\fill}}r}
+      #1 & {\color{dark-grey}} \\
+    \end{tabular*}\vspace{-4pt}
+}
+
+\newcommand{\resumeSubItem}[1]{\resumeItem{#1}\vspace{-4pt}}
+
+\renewcommand\labelitemii{$\vcenter{\hbox{\tiny$\bullet$}}$}
+
+% CHANGED default leftmargin  0.15 in
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0in, label={}]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+\newcommand{\resumeItemListStart}{\begin{itemize}}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{0pt}}
+
+\color{text-grey}
+
+%-------------------------------------------
+%%%%%%  RESUME STARTS HERE  %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\begin{document}
+
+%----------HEADING----------
+\begin{center}
+    \textbf{\huge Garrett Van Dyke} \\ \vspace{5pt}
+    \textcolor{MidnightBlue}{\faLock} \hspace{3pt}\texttt{TS/SCI, Polygraph}
+     \hspace{1pt} $|$
+    \hspace{1pt} \textcolor{MidnightBlue}{\faEnvelope} \hspace{2pt} \texttt{garrett.vandyke@icloud.com} \hspace{1pt} $|$ 
+        \hspace{1pt} \small \textcolor{MidnightBlue}{\faPhone*} \texttt{904-486-8265}
+    \\ \vspace{-3pt}
+\end{center}
+
+% \small{My approach to problem solving considers human factors such as team history, schedule constraints, and resource management equally with the relevant governing mathematics and technical execution.}
+%-----------PROGRAMMING SKILLS-----------
+\section{SKILLS}
+ \begin{itemize}[leftmargin=0in, label={}]
+    \small{\item{
+     \textbf{Languages:} {Python \textit{(dask, mpi4py, pydantic, polars, FastAPI, matplotlib, networkx, numpy, pandas, PyQT, pyzmq, scipy)}, MATLAB, Java, TypeScript, LaTeX, Mathematica}\vspace{2pt} \\
+     % \textbf{Developer Tools:} {uv, tox, pytest, polylith, pex}\vspace{2pt} \\
+     \textbf{Platforms and Operating Systems:} {GitLab, Jira, Confluence, GitHub, Red Hat Enterprise Linux 8, Windows 10 \& 11}
+    }} 
+    % \vspace{2pt} \\
+    % \textbf{Operating Systems:} {}
+ \end{itemize}
+
+
+%-----------EXPERIENCE-----------
+\section{EXPERIENCE}
+  \resumeSubHeadingListStart
+
+    \resumeSubheading
+      {Northrop Grumman}{2024 -- Present}
+      {Modeling \& Simulation Software Development Lead, Principal Physicist}{Linthicum, MD}
+      \resumeItemListStart
+      
+      \resumeItem{Designed, co-authored, and maintained package for running parallel (MPI) quantum circuit simulation workflows on an HPC system. Led scrum meetings, contributed high-level designs, reviewed code, and organized priorities with stakeholders.}
+      
+      \resumeItem{Managed development standards for group of 50+ contributors/users. Enforced standards through GitLab CI/CD pipeline configurations with varying strictness based on team need.}
+      
+        
+        
+        % \resumeItem{Planned and executed large-scale codebase refactors, deprecations, interface changes, and new capabilities.}
+        
+         % \resumeItem{Implemented test reporting features (coverage and quality reports) and automatic artifact deployment through GitLab CI/CD pipelines.}
+         
+        % \resumeItem{Planned and executed monorepo codebase refactor (polylith) to improve inter-team communication and remove artificial barriers to publishing features.}
+    
+        % \resumeItem{Modernized core computational package by implementing standard build, test, and development tools.}
+        
+        % \resumeItem{Designed and implemented refactor of team's core computational object. Changed the interface and internal data representation to enable robust serialization and external automation. \textit{[In-progress]}}
+        % Enabled previously disparate teams to collaborate seamlessly. 
+
+        \resumeItem{Co-authored and maintained launcher for running compressed python environments on an HPC system.}
+        
+      \resumeItemListEnd
+
+    \resumeSubheading
+      {Northrop Grumman}{2022 -- 2024}
+      {Test Capabilities Software Developer, Physicist}{Linthicum, MD}
+      \resumeItemListStart
+      \resumeItem{Co-authored GUI (PyQT) for cryogenic data acquisition framework. Included a workflow viewer, a database viewer, an instrument control interface, interactive pulse timing diagrams, and a real-time plotter.}
+      
+        % \resumeItem{Developed a web interface (React + FastAPI) to interact with cryogenic data acquisition framework.}
+        
+        % \resumeItem{Co-authored a lightweight plotter (pyzmq, PyQT) to enable real-time test performance monitoring.}
+        
+        % \resumeItem{Wrote analysis modules to extract operating points from incoming cryogenic test data.}
+        
+        \resumeItem{Wrote GUI (bokeh) enabling users to query chip fabrication performance metrics.}
+        
+        \resumeItem{Wrote MATLAB-to-Python interface allowing testers to hook custom Python analyses into a MATLAB data acquisition suite.}
+
+    \resumeItemListEnd
+
+\resumeSubheading
+      {Quanterix Corp.}{Summer 2021}
+      {Data Science Intern}{Billerica, MA}
+      \resumeItemListStart
+        \resumeItem{Maintained Java codebase for the SP-X planar immunoassay imaging and analysis platform. Provided bugfixes, image analysis improvements, and an automated regression test report generator for codebase validation.}
+      \resumeItemListEnd
+      
+    \resumeSubheading
+      {University of Alabama at Birmingham}{2019 -- 2021}
+      {Graduate Researcher}{Birmingham, AL}
+      \resumeItemListStart
+        \resumeItem{Assisted Dr. Ryoichi Kawai in computational physics research focusing on fundamental thermodynamics of open quantum systems. Used the Hierarchical Equations of Motion method on HPC system to simulate time evolution of a density matrix in a lossy environment.}
+        
+        % \resumeItem{Used university HPC system to run Fortran simulations of information-driven thermal cycles of qubits coupled to bosonic heat baths.}
+        
+        % \resumeItem{Assisted Dr. Mary Ellen Zvanut in electron paramagnetic resonance research. Wrote MATLAB scripts using the EasySpin library to predict spectroscopy results.}
+      \resumeItemListEnd
+
+
+
+    \resumeSubheading
+      {NASA Marshall Space Flight Center}{Summers 2018 \& 2019}
+      {Systems Engineering Intern}{Huntsville, AL}
+      \resumeItemListStart
+        \resumeItem{Developed tools to analyze test data from the RS-25 rocket engine in Python and VBA.}
+        % \resumeItem{Researched materials for use in fuel containers for experimental nuclear propulsion systems.}
+      \resumeItemListEnd
+
+  \resumeSubHeadingListEnd
+
+
+%-----------EDUCATION-----------
+\section {EDUCATION}
+  \resumeSubHeadingListStart
+    \resumeSubheading
+      {The University of Alabama at Birmingham}{Aug. 2019 -- Dec. 2021}
+      {Master's of Science in Physics, Open Quantum Systems}{Birmingham, AL}
+      	\resumeItemListStart
+    	\resumeItem {Blazer Research Fellow}
+        \resumeItemListEnd
+
+    \resumeSubheading
+      {Samford University}{Aug. 2015 -- May 2019}
+      {Bachelor of Science in Physics, Mathematics Minor}{Birmingham, AL}
+      	\resumeItemListStart
+    	\resumeItem {University Fellow}
+        \resumeItemListEnd
+  \resumeSubHeadingListEnd
+
+
+%-------------------------------------------
+\end{document}
