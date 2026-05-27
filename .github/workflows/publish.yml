@@ -3,12 +3,14 @@ name: Publish
 on: push
 
 jobs:
-  convert_via_pandoc:
+  build:
     runs-on: ubuntu-24.04
     steps:
       - uses: actions/checkout@v4
 
-      - uses: docker://pandoc/latex:3.8
+      - name: Build static files
+        id: build
+        uses: docker://pandoc/latex:3.8
         with:
           args: >-  # allows you to break string into multiple lines
             main.tex
@@ -16,7 +18,21 @@ jobs:
             -o
             index.html
 
-      - uses: actions/upload-artifact@v4
+      - name: Upload static files as artifact
+        uses: actions/upload-pages-artifact@v3
+        id: deployment
         with:
           name: output
           path: index.html
+
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    needs: build
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
+        
