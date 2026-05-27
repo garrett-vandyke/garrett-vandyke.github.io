@@ -11,7 +11,7 @@ jobs:
       - uses: docker://pandoc/latex:3.8
         with:
           args: >-  # allows you to break string into multiple lines
-            main.txt
+            main.tex
             -s
             -o
             index.html
