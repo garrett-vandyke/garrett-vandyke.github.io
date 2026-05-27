@@ -16,14 +16,14 @@ jobs:
             main.tex
             -s
             -o
-            index.html
+            _build/index.html
 
       - name: Upload static files as artifact
         uses: actions/upload-pages-artifact@v3
         id: deployment
         with:
           name: output
-          path: index.html
+          path: _build/
 
   deploy:
     environment:
@@ -35,4 +35,3 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
-        
