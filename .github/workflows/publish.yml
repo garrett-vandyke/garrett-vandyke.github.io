@@ -24,7 +24,7 @@ jobs:
             _build/index.html
 
       - name: Upload static files as artifact
-        uses: actions/upload-pages-artifact@v3
+        uses: actions/upload-pages-artifact@v5
         id: deployment
         with:
           name: output
